@@ -2,7 +2,6 @@
 Text cleaning utilities for transcript processing
 """
 import re
-from typing import str
 
 
 def clean_transcript(raw_text: str) -> str:
@@ -18,16 +17,20 @@ def clean_transcript(raw_text: str) -> str:
     if not raw_text:
         return ""
 
-    # Remove excessive whitespace
-    cleaned = re.sub(r'\s+', ' ', raw_text)
+    # Normalize line breaks (reduce excessive blank lines)
+    cleaned = re.sub(r'\n{3,}', '\n\n', raw_text)
 
-    # Remove special characters but keep punctuation
-    cleaned = re.sub(r'[^\w\s\[\]:,!?\-\'\"]', '', cleaned)
+    # Remove special characters but keep punctuation and newlines
+    cleaned = re.sub(r'[^\w\s\[\]:,!?\-\'\"\n]', '', cleaned)
 
-    # Normalize line breaks
-    cleaned = re.sub(r'\n{3,}', '\n\n', cleaned)
+    # Remove excessive spaces (but preserve newlines)
+    cleaned = re.sub(r'[ \t]+', ' ', cleaned)
 
-    # Strip leading/trailing whitespace
+    # Strip leading/trailing whitespace from each line
+    lines = [line.strip() for line in cleaned.split('\n')]
+    cleaned = '\n'.join(lines)
+
+    # Strip leading/trailing whitespace from entire text
     cleaned = cleaned.strip()
 
     return cleaned

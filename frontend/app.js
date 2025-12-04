@@ -22,10 +22,11 @@ document.getElementById("uploadForm").addEventListener("submit", async (e) => {
             return;
         }
 
-        resultJson = await res.json();
+        const response = await res.json();
+        resultJson = response.minutes || response;
 
         // Show Summary tab by default
-        updateTabContent("summary");
+        updateTabContent("executive_summary");
 
     } catch (error) {
         console.error(error);
@@ -47,14 +48,46 @@ function updateTabContent(tab) {
     const content = resultJson[tab];
 
     const tabContentEl = document.getElementById("tabContent");
-    if (!content) {
-        tabContentEl.innerText = "No data generated yet.";
+    if (!content || (Array.isArray(content) && content.length === 0)) {
+        tabContentEl.innerText = "No data available.";
         return;
     }
 
-    tabContentEl.innerText = Array.isArray(content)
-        ? content.map(item => "• " + item).join("\n")
-        : content;
+    // Format based on content type
+    if (Array.isArray(content)) {
+        if (content.length > 0 && typeof content[0] === 'object') {
+            // Array of objects - format nicely
+            let html = '';
+            content.forEach((item, index) => {
+                html += `<div style="margin-bottom: 15px; padding: 10px; background: #f8f9fa; border-radius: 5px;">`;
+                html += `<strong>#${index + 1}</strong><br>`;
+                for (const [key, value] of Object.entries(item)) {
+                    if (value !== null && value !== undefined) {
+                        const displayKey = key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+                        html += `<strong>${displayKey}:</strong> ${value}<br>`;
+                    }
+                }
+                html += `</div>`;
+            });
+            tabContentEl.innerHTML = html;
+        } else {
+            // Array of strings
+            tabContentEl.innerHTML = content.map(item => "• " + item).join("<br>");
+        }
+    } else if (typeof content === 'object') {
+        // Single object
+        let html = '';
+        for (const [key, value] of Object.entries(content)) {
+            if (value !== null && value !== undefined) {
+                const displayKey = key.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+                html += `<strong>${displayKey}:</strong> ${value}<br>`;
+            }
+        }
+        tabContentEl.innerHTML = html;
+    } else {
+        // Simple value
+        tabContentEl.innerText = content;
+    }
 }
 
 // Copy JSON to clipboard
@@ -88,6 +121,6 @@ document.getElementById("clearScreen").onclick = () => {
     resultJson = {};
     document.getElementById("tabContent").innerText = "No data generated yet.";
     document.querySelectorAll(".tab").forEach(tab => tab.classList.remove("active"));
-    document.querySelector(".tab[data-tab='summary']").classList.add("active");
+    document.querySelector(".tab[data-tab='executive_summary']").classList.add("active");
 };
  

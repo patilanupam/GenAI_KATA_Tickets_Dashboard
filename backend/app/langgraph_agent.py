@@ -1,11 +1,12 @@
 from typing import TypedDict, List, Dict, Any
-from langgraph.graph import StateGraph, START, END
+from langgraph.graph import StateGraph
 from pydantic import BaseModel
 import httpx
 
 from .config import settings
 from .services.text_cleaner import clean_transcript
 from .services.speaker_parser import parse_speakers
+from .services.fallback_parser import parse_transcript_fallback
 
 # ----------- State Definition -----------
 
@@ -25,19 +26,16 @@ async def call_ollama(prompt: str) -> str:
         "temperature": 0.2,
         "top_p": 0.95,
         "repeat_penalty": 1.1,
+        "stream": False
     }
     async with httpx.AsyncClient(timeout=120.0) as client:
         response = await client.post(
             f"{settings.OLLAMA_HOST}/api/generate", json=payload
         )
         response.raise_for_status()
-        # ollama returns streaming chunks; we accumulate to string
-        output = ""
-        for chunk in response.iter_lines():
-            if chunk:
-                data = httpx.Response(200, content=chunk).json()
-                output += data.get("response", "")
-        return output.strip()
+        # Parse the JSON response
+        data = response.json()
+        return data.get("response", "").strip()
 
 # ----------- Node Definitions -----------
 
@@ -75,22 +73,39 @@ JSON only, no markdown.
 async def node_llm_minutes(state: MinutesState) -> MinutesState:
     prompt = build_structuring_prompt(state["speaker_segments"])
     raw_response = await call_ollama(prompt)
-    return {**state, "structured_minutes": raw_response, "llm_trace": {"prompt": prompt}}
+    return {**state, "structured_minutes": raw_response, "llm_trace": {"prompt": prompt, "raw_response": raw_response}}
 
 async def node_validate_structure(state: MinutesState) -> MinutesState:
     # Optionally validate JSON, ensure all keys exist
     import json
+    import re
+
+    raw_json = state["structured_minutes"]
+
+    # Try to extract JSON from markdown code blocks or other wrapping
+    json_match = re.search(r'```(?:json)?\s*(\{.*?\})\s*```', raw_json, re.DOTALL)
+    if json_match:
+        raw_json = json_match.group(1)
+
+    # Try to find JSON object even if there's text around it
+    if not raw_json.strip().startswith('{'):
+        json_match = re.search(r'\{.*\}', raw_json, re.DOTALL)
+        if json_match:
+            raw_json = json_match.group(0)
+
     try:
-        parsed = json.loads(state["structured_minutes"])
+        parsed = json.loads(raw_json)
     except json.JSONDecodeError as exc:
-        parsed = {
-            "executive_summary": ["LLM parsing error: " + str(exc)],
-            "action_items": [],
-            "decisions": [],
-            "risks": [],
-            "speaker_spotlight": [],
-            "metadata": {"confidence_notes": "Failed to parse JSON output from LLM."},
-        }
+        # Log the actual response for debugging
+        print(f"LLM Response that failed to parse: {raw_json[:500]}")
+        print(f"Using fallback parser instead...")
+
+        # Use rule-based fallback parser
+        parsed = parse_transcript_fallback(
+            state.get("raw_transcript", ""),
+            state.get("speaker_segments", [])
+        )
+
     return {**state, "structured_minutes": parsed}
 
 # ----------- Graph Construction -----------
@@ -102,11 +117,11 @@ graph_builder.add_node("parse_speakers", node_parse_speakers)
 graph_builder.add_node("llm_minutes", node_llm_minutes)
 graph_builder.add_node("validate_structure", node_validate_structure)
 
-graph_builder.add_edge(START, "clean_transcript")
+graph_builder.set_entry_point("clean_transcript")
 graph_builder.add_edge("clean_transcript", "parse_speakers")
 graph_builder.add_edge("parse_speakers", "llm_minutes")
 graph_builder.add_edge("llm_minutes", "validate_structure")
-graph_builder.add_edge("validate_structure", END)
+graph_builder.set_finish_point("validate_structure")
 
 minutes_graph = graph_builder.compile()
 
