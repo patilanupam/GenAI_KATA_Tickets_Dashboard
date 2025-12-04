@@ -12,7 +12,7 @@ class Settings(BaseSettings):
 
     # Ollama LLM settings
     OLLAMA_HOST: str = "http://localhost:11434"
-    OLLAMA_MODEL: str = "llama2"
+    OLLAMA_MODEL: str = "tinyllama"
 
     # File upload limits
     MAX_TRANSCRIPT_SIZE_MB: int = 10
