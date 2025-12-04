@@ -1,53 +1,58 @@
 version: '3.8'
 
 services:
-  # Backend API Service
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
-    container_name: clarifymeet-backend
+  # Ollama LLM Service with TinyLlama model
+  ollama:
+    image: ollama/ollama:latest
+    container_name: clarifymeet-ollama
     ports:
-      - "8000:8000"
-    environment:
-      - OLLAMA_BASE_URL=http://host.docker.internal:11434
-      - OLLAMA_MODEL=tinyllama
-      - SESSION_TTL_MINUTES=60
-      - CORS_ORIGINS=["http://localhost:8080","http://127.0.0.1:8080"]
+      - "11434:11434"
     volumes:
-      - ./backend:/app
-      - /app/__pycache__
-    restart: unless-stopped
+      - ollama_data:/root/.ollama
     networks:
       - clarifymeet-network
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
       interval: 30s
       timeout: 10s
-      retries: 3
-      start_period: 40s
-
-  # Frontend Service (Simple HTTP Server)
-  frontend:
-    image: python:3.11-slim
-    container_name: clarifymeet-frontend
-    ports:
-      - "8080:8080"
-    volumes:
-      - ./frontend:/app
-    working_dir: /app
-    command: python -m http.server 8080
+      retries: 5
+      start_period: 30s
     restart: unless-stopped
+    # Pull tinyllama model on startup
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        ollama serve &
+        sleep 5
+        ollama pull tinyllama
+        wait
+
+  # ClarifyMeet AI Backend + Frontend
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: clarifymeet-app
+    ports:
+      - "8000:8000"
+    environment:
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - OLLAMA_MODEL=tinyllama
+    volumes:
+      - ./backend:/app/backend
+      - ./frontend:/app/frontend
+    depends_on:
+      ollama:
+        condition: service_healthy
     networks:
       - clarifymeet-network
-    depends_on:
-      - backend
+    restart: unless-stopped
+    command: ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
 networks:
   clarifymeet-network:
     driver: bridge
 
-# Note: Ollama must be running on the host machine
-# Install Ollama: curl -fsSL https://ollama.com/install.sh | sh
-# Pull model: ollama pull tinyllama
-# Start Ollama: ollama serve (runs on http://localhost:11434)
+volumes:
+  ollama_data:
+    driver: local
