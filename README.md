@@ -1,17 +1,3 @@
-# ClarifyMeetAI
-
-```mermaid 
-flowchart TD
-    A[Upload Transcript (.txt)] --> B[Validate & Extract Text]
-    B --> C[Identify Speakers/Actors]
-    C --> D[Summarize Meeting]
-    D --> E[Extract Action Items]
-    E --> F[Extract Decisions]
-    F --> G[Identify Risks]
-    G --> H[Format Structured Minutes (JSON)]
-    H --> I[Return to Frontend]
-```
-
 # ClarifyMeet AI 🤖
 
 > Transform meeting conversations into actionable insights using AI
