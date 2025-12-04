@@ -9,24 +9,32 @@
     <div class="container">
         <h1>ClarifyMeet AI</h1>
         <p>Turn Conversations into Clear Actions</p>
+
+        <!-- Upload Form -->
         <form id="uploadForm" enctype="multipart/form-data">
             <input type="file" id="transcriptFile" accept=".txt" required>
             <button type="submit">Generate Minutes</button>
         </form>
+
+        <!-- Tabs -->
         <div class="tabs">
-            <button class="tab active" data-tab="summary
-">Summary</button>
+            <button class="tab active" data-tab="summary">Summary</button>
             <button class="tab" data-tab="actions">Actions</button>
             <button class="tab" data-tab="decisions">Decisions</button>
             <button class="tab" data-tab="risks">Risks</button>
         </div>
-        <div id="tabContent"></div>
+
+        <!-- Content -->
+        <div id="tabContent">No data generated yet.</div>
+
+        <!-- Action Buttons -->
         <div class="actions">
             <button id="copyJson">Copy JSON</button>
             <button id="downloadJson">Download JSON</button>
             <button id="clearScreen">Clear Screen</button>
         </div>
     </div>
+
     <script src="/app.js"></script>
 </body>
 </html>
