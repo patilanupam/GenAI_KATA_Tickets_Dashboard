@@ -8,7 +8,7 @@ ClarifyMeetAI is an intelligent meeting transcription analysis tool that transfo
 
 ## System Architecture
 
-```mermaid 
+```mermaid
 flowchart TD
     A[Upload Transcript (.txt)] --> B[Validate & Extract Text]
     B --> C[Identify Speakers/Actors]
@@ -16,7 +16,7 @@ flowchart TD
     D --> E[Extract Action Items]
     E --> F[Extract Decisions]
     F --> G[Identify Risks]
-    G --> H[Format Structured Minutes (JSON)]
+    G --> H[Format Structured Minutes JSON]
     H --> I[Return to Frontend]
 ```
 
@@ -61,3 +61,4 @@ clarifymeet-ai/
 ├── .gitignore                 # Git exclusions
 └── .env                       # Environment configuration
 ```
+
