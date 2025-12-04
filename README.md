@@ -1,5 +1,6 @@
 # ClarifyMeetAI
 
+```mermaid 
 flowchart TD
     A[Upload Transcript (.txt)] --> B[Validate & Extract Text]
     B --> C[Identify Speakers/Actors]
@@ -9,6 +10,7 @@ flowchart TD
     F --> G[Identify Risks]
     G --> H[Format Structured Minutes (JSON)]
     H --> I[Return to Frontend]
+```
 
 clarifymeet-ai/
 │
@@ -24,10 +26,10 @@ clarifymeet-ai/
 │   └── requirements.txt
 │
 ├── frontend/
-│   ├── static/
-│   │   ├── style.css          # Responsive CSS
-│   ├── templates/
-│   │   └── index.html         # Main UI
+│   ├── style.css          # Responsive CSS
+│   │  
+│   ├── index.html         # Main UI
+│   │   
 │   └── app.js                 # Frontend logic (optional)
 │
 ├── docs/
@@ -35,3 +37,7 @@ clarifymeet-ai/
 │   └── README.md              # Project documentation
 │
 └── .env                       # Ollama API keys/config
+----- dockerfile
+------ dockercompose
+------- .dockerignore
+-------- .gitignore 

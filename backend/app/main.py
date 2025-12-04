@@ -1,5 +1,7 @@
-import io
-from fastapi import FastAPI, UploadFile, File, HTTPException, Depends
+"""
+FastAPI application entry point for ClarifyMeet AI
+"""
+from fastapi import FastAPI, UploadFile, File, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.responses import JSONResponse
 from .config import settings
@@ -17,9 +19,11 @@ app.add_middleware(
 
 @app.get("/healthz")
 async def health_check():
+    """Health check endpoint"""
     return {"status": "ok", "model": settings.OLLAMA_MODEL}
 
 def validate_file(file: UploadFile) -> None:
+    """Validate uploaded file"""
     if not file.filename.endswith(".txt"):
         raise HTTPException(status_code=400, detail="Only .txt transcripts are accepted.")
     size = file.spool_max_size
@@ -28,6 +32,15 @@ def validate_file(file: UploadFile) -> None:
 
 @app.post(f"{settings.API_PREFIX}/analyze", response_model=MinutesResponse)
 async def analyze_transcript(file: UploadFile = File(...)):
+    """
+    Analyze transcript and generate meeting minutes.
+
+    Args:
+        file: Uploaded transcript file (.txt format)
+
+    Returns:
+        MinutesResponse containing structured meeting minutes
+    """
     validate_file(file)
     transcript_bytes = await file.read()
     try:
@@ -37,3 +50,4 @@ async def analyze_transcript(file: UploadFile = File(...)):
 
     result = await generate_minutes(transcript_text)
     return JSONResponse(content=result)
+
