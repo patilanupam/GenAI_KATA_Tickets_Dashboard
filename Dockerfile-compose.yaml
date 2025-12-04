@@ -1,31 +1,53 @@
-# Multi-stage build for ClarifyMeet AI Backend
-FROM python:3.11-slim as base
+version: '3.8'
 
-# Set environment variables
-ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1 \
-    PIP_NO_CACHE_DIR=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=1
+services:
+  # Backend API Service
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: clarifymeet-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - OLLAMA_MODEL=tinyllama
+      - SESSION_TTL_MINUTES=60
+      - CORS_ORIGINS=["http://localhost:8080","http://127.0.0.1:8080"]
+    volumes:
+      - ./backend:/app
+      - /app/__pycache__
+    restart: unless-stopped
+    networks:
+      - clarifymeet-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
 
-# Set working directory
-WORKDIR /app
+  # Frontend Service (Simple HTTP Server)
+  frontend:
+    image: python:3.11-slim
+    container_name: clarifymeet-frontend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./frontend:/app
+    working_dir: /app
+    command: python -m http.server 8080
+    restart: unless-stopped
+    networks:
+      - clarifymeet-network
+    depends_on:
+      - backend
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    curl \
-    && rm -rf /var/lib/apt/lists/*
+networks:
+  clarifymeet-network:
+    driver: bridge
 
-# Copy requirements first for better caching
-COPY requirements.txt .
-
-# Install Python dependencies
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy application code
-COPY . .
-
-# Expose port
-EXPOSE 8000
-
-# Run with uvicorn
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+# Note: Ollama must be running on the host machine
+# Install Ollama: curl -fsSL https://ollama.com/install.sh | sh
+# Pull model: ollama pull tinyllama
+# Start Ollama: ollama serve (runs on http://localhost:11434)
