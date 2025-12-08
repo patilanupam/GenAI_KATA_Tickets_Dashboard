@@ -1,0 +1,31 @@
+Aman: Okay, so let’s talk about the release. The original plan was Dec 10, but honestly, looking at the backend delay…
+
+Sara: Yes, the DB migration didn’t finish last week.
+
+Aman: Right. So decision— we push the release by “a week or so.” Not exact date yet.
+
+Ritu: I spoke to QA. They said they can test everything in 3 days if we give them the stable build by Thursday.
+
+Aman: Which Thursday? This week’s or next week’s?
+
+Ritu: This week… hopefully.
+
+Dev: Action item for me— I’ll work on the error retry logic. No date mentioned yet but I’ll try before Thursday.
+
+Aman: Good. And the mobile team? Any updates?  
+
+Shekhar: Umm… We were planning to finish the splash screen fix “sometime next week.” Priority low.
+
+Sara: Another risk — if backend throttling is not fixed, the entire release becomes unstable.
+
+Dev: Also we need an owner for performance benchmarking. Nobody picked it.
+
+Aman: Ritu, can you take that?  
+Ritu: I can, but only after Wednesday.
+
+Shekhar: Oh and action—I will also update the release notes, but after the design team finalizes the icons. No due date.
+
+Aman: So many dependencies…  
+Risk: Some teams are unclear about their deadlines.
+
+Open question: Should we communicate this delay to leadership today or tomorrow?

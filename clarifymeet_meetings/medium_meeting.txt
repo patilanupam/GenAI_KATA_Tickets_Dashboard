@@ -1,0 +1,17 @@
+Neha: The client wants an onboarding flow change. They asked for fewer steps in the sign-up form. Let's finalize our plan today.
+
+Arun: Decision: We keep the sign-up to 3 steps only. Optional fields will move to profile settings.
+
+Neha: Good. Action for me — update the PRD by Monday.
+
+Dev: I can take the UI task. I will prepare the first draft by Wednesday.
+
+Riya: Noted. I’ll review Dev’s UI draft and share comments same day.
+
+Neha: There is a dependency on the analytics team for the funnel data. Risk: If analytics doesn’t share the data by Thursday, we may delay refining the flow.
+
+Arun: Also, one more action — Someone should check if our backend can support step-wise autosave.
+
+Dev: I’m not sure; maybe Backend team? No owner decided yet.
+
+Riya: Open question: Do we need OTP verification in step 1?

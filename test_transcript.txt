@@ -1,0 +1,5 @@
+John: Good morning everyone. Let's start our meeting.
+
+Sarah: I'll work on the login feature. I can finish it by Friday.
+
+Mike: I'll handle the backend API. Due date is next Monday.

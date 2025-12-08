@@ -1,0 +1,9 @@
+Ayesha: Quick update — Login revamp is done. Decision: We will release it on Friday, Dec 6.
+
+Pranav: I’ll take an action item to prepare the test cases by tomorrow.
+
+Riya: I’ll update the documentation by end of day.
+
+Ayesha: Great. Also, please note that the API rate limit issue is still pending. Risk: If not fixed this week, it may affect the release.
+
+Suraj: I’ll check with DevOps on the rate limit configuration.

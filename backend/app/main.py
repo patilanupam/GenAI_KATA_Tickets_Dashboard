@@ -96,3 +96,74 @@ async def process_transcript(file: UploadFile = File(...)):
             content={"error": str(e)}
         )
 
+@app.post("/process-batch")
+async def process_batch_transcripts():
+    """
+    Process all transcript files in the clarifymeet_meetings folder.
+
+    Returns:
+        JSON response with results for all processed files
+    """
+    import os
+    import asyncio
+
+    meetings_folder = Path("/app/clarifymeet_meetings")
+
+    if not meetings_folder.exists():
+        raise HTTPException(status_code=404, detail="clarifymeet_meetings folder not found")
+
+    txt_files = list(meetings_folder.glob("*.txt"))
+
+    if not txt_files:
+        raise HTTPException(status_code=404, detail="No .txt files found in clarifymeet_meetings folder")
+
+    results = []
+    errors = []
+
+    for file_path in txt_files:
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                transcript_text = f.read()
+
+            result = await generate_minutes(transcript_text)
+            results.append({
+                "filename": file_path.name,
+                "status": "success",
+                "minutes": result["minutes"],
+                "metadata": result.get("llm_trace", {})
+            })
+        except Exception as e:
+            errors.append({
+                "filename": file_path.name,
+                "status": "error",
+                "error": str(e)
+            })
+
+    return JSONResponse(content={
+        "processed_count": len(txt_files),
+        "success_count": len(results),
+        "error_count": len(errors),
+        "results": results,
+        "errors": errors
+    })
+
+@app.get("/list-meeting-files")
+async def list_meeting_files():
+    """
+    List all available transcript files in the clarifymeet_meetings folder.
+
+    Returns:
+        JSON response with list of available files
+    """
+    meetings_folder = Path("/app/clarifymeet_meetings")
+
+    if not meetings_folder.exists():
+        return JSONResponse(content={"files": [], "message": "clarifymeet_meetings folder not found"})
+
+    txt_files = [f.name for f in meetings_folder.glob("*.txt")]
+
+    return JSONResponse(content={
+        "count": len(txt_files),
+        "files": sorted(txt_files)
+    })
+
