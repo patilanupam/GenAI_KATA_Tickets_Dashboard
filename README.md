@@ -4,16 +4,15 @@
 
 ---
 
-## Quick Start (1-Hour KATA)
+## Quick Start 
 
 This solution processes ticket data from two support hubs and generates performance dashboards for leadership.
 
-### For Your Team of 4:
-1. **Read this README first** (all team members - 5 minutes)
-2. **Open TEAM_GUIDE.md** to see individual role assignments
+### ReadMe:
+1. **Read this README first**
+2. **Open TEAM_GUIDE.md** 
 3. **Run the script** to generate outputs
 4. **Create dashboard** in Excel using the outputs
-5. **Prepare presentation** for leadership
 
 ---
 
