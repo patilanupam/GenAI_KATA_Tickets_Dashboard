@@ -1,0 +1,151 @@
+ticket_id,hub,function,channel,created_datetime,resolved_datetime,status,priority,sla_target_hours,assigned_agent_id,requester_department,category,csat_score,reopened_flag,year_month,month_name,resolution_time_hours,sla_met,csat_score_clean,csat_high,csat_low,csat_has_score,is_backlog,was_reopened
+TCK-2001,A,IT,Phone,2025-10-08 11:15:00,,Open,Medium,24,AG-001,Marketing,Software Install,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2002,A,IT,Portal,2025-10-07 11:00:00,2025-10-09 08:00:00,Closed,Medium,24,AG-003,Sales,Software Install,1.0,0,2025-10,October 2025,45.0,False,1.0,False,True,True,False,False
+TCK-2003,A,Finance,Chat,2025-10-11 12:15:00,2025-10-11 19:15:00,Resolved,Medium,24,AG-004,Corporate,Invoice Dispute,3.0,0,2025-10,October 2025,7.0,True,3.0,False,False,True,False,False
+TCK-2004,A,Finance,Chat,2025-10-18 09:45:00,2025-10-20 02:45:00,Resolved,High,8,AG-004,Marketing,Reimbursement,,1,2025-10,October 2025,41.0,False,0.0,False,False,False,False,True
+TCK-2005,A,HR,Portal,2025-10-28 11:00:00,2025-10-30 17:00:00,Closed,Medium,24,AG-002,Sales,Policy Clarification,3.0,0,2025-10,October 2025,54.0,False,3.0,False,False,True,False,False
+TCK-2006,A,Finance,Email,2025-10-18 11:15:00,2025-10-20 23:15:00,Closed,High,8,AG-004,Operations,Invoice Dispute,1.0,0,2025-10,October 2025,60.0,False,1.0,False,True,True,False,False
+TCK-2007,B,HR,Portal,2025-10-07 17:30:00,2025-10-10 02:30:00,Resolved,Medium,24,AG-006,Sales,Policy Clarification,5.0,0,2025-10,October 2025,57.0,False,5.0,True,False,True,False,False
+TCK-2008,B,Finance,Chat,2025-10-12 11:15:00,2025-10-12 15:15:00,Closed,Critical,4,AG-007,Sales,Reimbursement,,0,2025-10,October 2025,4.0,True,0.0,False,False,False,False,False
+TCK-2009,A,HR,Chat,2025-10-20 15:30:00,,In Progress,Low,48,AG-002,Engineering,Benefits Query,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2010,B,Finance,Phone,2025-10-04 12:45:00,2025-10-06 11:45:00,Resolved,Critical,4,AG-007,Marketing,Reimbursement,1.0,0,2025-10,October 2025,47.0,False,1.0,False,True,True,False,False
+TCK-2011,B,Finance,Email,2025-10-05 13:15:00,2025-10-06 23:15:00,Closed,Medium,24,AG-007,Marketing,Vendor Payment,1.0,0,2025-10,October 2025,34.0,False,1.0,False,True,True,False,False
+TCK-2012,B,IT,Portal,2025-10-08 17:00:00,2025-10-08 22:00:00,Resolved,Medium,24,AG-005,Sales,Software Install,,0,2025-10,October 2025,5.0,True,0.0,False,False,False,False,False
+TCK-2013,B,IT,Email,2025-10-23 12:45:00,,In Progress,Medium,24,AG-005,Marketing,Software Install,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2014,A,IT,Email,2025-10-03 13:00:00,2025-10-04 04:00:00,Closed,High,8,AG-001,Engineering,Network Outage,1.0,0,2025-10,October 2025,15.0,False,1.0,False,True,True,False,False
+TCK-2015,A,Finance,Email,2025-10-09 18:45:00,2025-10-12 06:45:00,Resolved,High,8,AG-004,Sales,Budget Access,,0,2025-10,October 2025,60.0,False,0.0,False,False,False,False,False
+TCK-2016,A,Finance,Chat,2025-10-12 14:45:00,2025-10-14 10:45:00,Closed,Medium,24,AG-004,Engineering,Budget Access,,0,2025-10,October 2025,44.0,False,0.0,False,False,False,False,False
+TCK-2017,A,IT,Email,2025-10-07 16:45:00,2025-10-08 22:45:00,Resolved,High,8,AG-001,Engineering,Software Install,,0,2025-10,October 2025,30.0,False,0.0,False,False,False,False,False
+TCK-2018,A,IT,Portal,2025-10-03 11:15:00,2025-10-05 19:15:00,Closed,Medium,24,AG-003,Engineering,Laptop Issue,4.0,0,2025-10,October 2025,56.0,False,4.0,True,False,True,False,False
+TCK-2019,B,HR,Chat,2025-10-23 16:45:00,2025-10-23 20:45:00,Resolved,High,8,AG-006,Operations,Payroll Query,4.0,0,2025-10,October 2025,4.0,True,4.0,True,False,True,False,False
+TCK-2020,A,IT,Portal,2025-10-28 10:00:00,2025-10-29 02:00:00,Closed,Medium,24,AG-003,Engineering,Email Issue,5.0,1,2025-10,October 2025,16.0,True,5.0,True,False,True,False,True
+TCK-2021,A,HR,Phone,2025-10-09 11:30:00,2025-10-11 06:30:00,Resolved,Medium,24,AG-002,Corporate,Policy Clarification,,0,2025-10,October 2025,43.0,False,0.0,False,False,False,False,False
+TCK-2022,A,HR,Portal,2025-10-03 16:15:00,2025-10-04 15:15:00,Closed,High,8,AG-002,Sales,Policy Clarification,4.0,0,2025-10,October 2025,23.0,False,4.0,True,False,True,False,False
+TCK-2023,B,Finance,Portal,2025-10-22 16:30:00,,In Progress,High,8,AG-007,Operations,Invoice Dispute,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2024,A,Finance,Email,2025-10-09 12:15:00,,Open,High,8,AG-004,Marketing,Budget Access,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2025,B,IT,Portal,2025-10-21 14:30:00,2025-10-21 23:30:00,Resolved,Medium,24,AG-005,Sales,Software Install,4.0,0,2025-10,October 2025,9.0,True,4.0,True,False,True,False,False
+TCK-2026,A,IT,Email,2025-10-18 08:30:00,2025-10-18 17:30:00,Closed,High,8,AG-001,Operations,VPN Access,,0,2025-10,October 2025,9.0,False,0.0,False,False,False,False,False
+TCK-2027,A,HR,Email,2025-10-22 11:00:00,2025-10-24 19:00:00,Closed,Medium,24,AG-002,Marketing,Leave Balance,,0,2025-10,October 2025,56.0,False,0.0,False,False,False,False,False
+TCK-2028,A,IT,Chat,2025-10-01 10:30:00,,Open,Medium,24,AG-001,Operations,Laptop Issue,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2029,A,HR,Portal,2025-10-28 15:15:00,2025-10-29 14:15:00,Resolved,Low,48,AG-002,Sales,Leave Balance,2.0,0,2025-10,October 2025,23.0,True,2.0,False,True,True,False,False
+TCK-2030,B,IT,Phone,2025-10-12 18:45:00,,Open,Low,48,AG-005,Engineering,Network Outage,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2031,B,IT,Phone,2025-10-02 09:45:00,2025-10-03 13:45:00,Closed,Medium,24,AG-005,Corporate,Email Issue,1.0,0,2025-10,October 2025,28.0,False,1.0,False,True,True,False,False
+TCK-2032,A,Finance,Email,2025-10-12 14:00:00,,In Progress,Low,48,AG-004,Engineering,Vendor Payment,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2033,B,Finance,Chat,2025-10-11 14:30:00,2025-10-13 09:30:00,Closed,High,8,AG-007,Sales,Cost Center Change,4.0,0,2025-10,October 2025,43.0,False,4.0,True,False,True,False,False
+TCK-2034,A,HR,Phone,2025-10-07 14:30:00,2025-10-08 04:30:00,Closed,Medium,24,AG-002,Sales,Payroll Query,5.0,0,2025-10,October 2025,14.0,True,5.0,True,False,True,False,False
+TCK-2035,A,Finance,Phone,2025-10-08 11:15:00,2025-10-09 18:15:00,Resolved,High,8,AG-004,Corporate,Budget Access,,0,2025-10,October 2025,31.0,False,0.0,False,False,False,False,False
+TCK-2036,B,HR,Chat,2025-10-08 10:00:00,,In Progress,Low,48,AG-006,Corporate,Leave Balance,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2037,A,Finance,Chat,2025-10-02 16:15:00,,In Progress,High,8,AG-004,Corporate,Cost Center Change,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2038,B,HR,Chat,2025-10-27 16:45:00,,In Progress,Medium,24,AG-006,Corporate,Policy Clarification,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2039,A,Finance,Phone,2025-10-25 16:45:00,,Open,High,8,AG-004,Operations,Reimbursement,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2040,B,HR,Phone,2025-10-18 09:15:00,2025-10-18 19:15:00,Resolved,Medium,24,AG-006,Engineering,Onboarding,5.0,0,2025-10,October 2025,10.0,True,5.0,True,False,True,False,False
+TCK-2041,A,IT,Chat,2025-10-13 17:00:00,,In Progress,Medium,24,AG-003,Corporate,Network Outage,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2042,B,HR,Chat,2025-10-28 14:15:00,2025-10-29 22:15:00,Closed,High,8,AG-006,Corporate,Policy Clarification,4.0,0,2025-10,October 2025,32.0,False,4.0,True,False,True,False,False
+TCK-2043,B,IT,Portal,2025-10-13 17:00:00,2025-10-16 01:00:00,Resolved,Medium,24,AG-005,Sales,Network Outage,3.0,0,2025-10,October 2025,56.0,False,3.0,False,False,True,False,False
+TCK-2044,B,HR,Chat,2025-10-09 14:30:00,,Open,Medium,24,AG-006,Operations,Leave Balance,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2045,A,Finance,Portal,2025-10-25 08:15:00,2025-10-25 18:15:00,Resolved,Critical,4,AG-004,Sales,Budget Access,5.0,0,2025-10,October 2025,10.0,False,5.0,True,False,True,False,False
+TCK-2046,B,Finance,Phone,2025-10-25 13:15:00,,Open,Low,48,AG-007,Sales,Vendor Payment,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2047,A,Finance,Portal,2025-10-10 17:45:00,2025-10-10 22:45:00,Closed,Medium,24,AG-004,Engineering,Vendor Payment,,0,2025-10,October 2025,5.0,True,0.0,False,False,False,False,False
+TCK-2048,A,Finance,Portal,2025-10-12 16:45:00,,Open,Critical,4,AG-004,Engineering,Budget Access,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2049,B,IT,Chat,2025-10-12 18:45:00,,Open,Medium,24,AG-005,Marketing,Email Issue,,0,2025-10,October 2025,,,0.0,False,False,False,True,False
+TCK-2050,B,HR,Chat,2025-10-27 17:30:00,2025-10-30 05:30:00,Closed,High,8,AG-006,Operations,Onboarding,4.0,0,2025-10,October 2025,60.0,False,4.0,True,False,True,False,False
+TCK-2051,B,HR,Portal,2025-11-16 13:15:00,2025-11-17 06:15:00,Closed,Medium,24,AG-006,Operations,Benefits Query,,0,2025-11,November 2025,17.0,True,0.0,False,False,False,False,False
+TCK-2052,A,Finance,Email,2025-11-03 11:45:00,2025-11-05 08:45:00,Closed,Medium,24,AG-004,Corporate,Budget Access,,1,2025-11,November 2025,45.0,False,0.0,False,False,False,False,True
+TCK-2053,A,HR,Email,2025-11-10 18:30:00,2025-11-11 22:30:00,Closed,Medium,24,AG-002,Operations,Onboarding,3.0,0,2025-11,November 2025,28.0,False,3.0,False,False,True,False,False
+TCK-2054,A,HR,Portal,2025-11-24 16:15:00,2025-11-25 10:15:00,Resolved,Medium,24,AG-002,Engineering,Leave Balance,3.0,0,2025-11,November 2025,18.0,True,3.0,False,False,True,False,False
+TCK-2055,A,Finance,Email,2025-11-09 08:00:00,2025-11-09 17:00:00,Closed,Medium,24,AG-004,Engineering,Invoice Dispute,4.0,0,2025-11,November 2025,9.0,True,4.0,True,False,True,False,False
+TCK-2056,B,IT,Portal,2025-11-09 15:00:00,,Open,Medium,24,AG-005,Marketing,Network Outage,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2057,A,IT,Phone,2025-11-03 11:00:00,2025-11-05 02:00:00,Closed,Medium,24,AG-001,Marketing,Software Install,4.0,0,2025-11,November 2025,39.0,False,4.0,True,False,True,False,False
+TCK-2058,B,HR,Portal,2025-11-20 09:15:00,,Open,High,8,AG-006,Sales,Leave Balance,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2059,A,Finance,Portal,2025-11-06 08:45:00,2025-11-07 03:45:00,Closed,Medium,24,AG-004,Sales,Vendor Payment,,0,2025-11,November 2025,19.0,True,0.0,False,False,False,False,False
+TCK-2060,B,IT,Email,2025-11-09 18:15:00,2025-11-11 12:15:00,Closed,Medium,24,AG-005,Operations,Laptop Issue,2.0,0,2025-11,November 2025,42.0,False,2.0,False,True,True,False,False
+TCK-2061,B,HR,Portal,2025-11-15 12:45:00,,In Progress,Medium,24,AG-006,Corporate,Payroll Query,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2062,A,HR,Phone,2025-11-20 12:00:00,2025-11-22 18:00:00,Resolved,Low,48,AG-002,Operations,Benefits Query,2.0,0,2025-11,November 2025,54.0,False,2.0,False,True,True,False,False
+TCK-2063,B,HR,Email,2025-11-19 14:45:00,,In Progress,Medium,24,AG-006,Operations,Policy Clarification,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2064,A,IT,Phone,2025-11-14 15:30:00,,Open,Medium,24,AG-001,Corporate,Network Outage,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2065,B,HR,Phone,2025-11-04 14:00:00,,Open,Medium,24,AG-006,Engineering,Leave Balance,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2066,B,Finance,Chat,2025-11-21 15:00:00,2025-11-24 03:00:00,Resolved,Medium,24,AG-007,Corporate,Budget Access,5.0,0,2025-11,November 2025,60.0,False,5.0,True,False,True,False,False
+TCK-2067,A,HR,Portal,2025-11-18 14:00:00,2025-11-18 22:00:00,Resolved,Low,48,AG-002,Engineering,Leave Balance,3.0,0,2025-11,November 2025,8.0,True,3.0,False,False,True,False,False
+TCK-2068,B,HR,Chat,2025-11-16 11:45:00,2025-11-18 22:45:00,Closed,Medium,24,AG-006,Engineering,Policy Clarification,,0,2025-11,November 2025,59.0,False,0.0,False,False,False,False,False
+TCK-2069,B,Finance,Phone,2025-11-27 08:30:00,,Open,Low,48,AG-007,Sales,Budget Access,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2070,B,HR,Phone,2025-11-18 16:45:00,2025-11-19 05:45:00,Closed,Medium,24,AG-006,Marketing,Onboarding,4.0,1,2025-11,November 2025,13.0,True,4.0,True,False,True,False,True
+TCK-2071,B,Finance,Chat,2025-11-13 18:15:00,2025-11-15 03:15:00,Closed,Critical,4,AG-007,Engineering,Budget Access,4.0,1,2025-11,November 2025,33.0,False,4.0,True,False,True,False,True
+TCK-2072,A,HR,Email,2025-11-03 15:30:00,2025-11-05 09:30:00,Closed,Medium,24,AG-002,Operations,Benefits Query,3.0,0,2025-11,November 2025,42.0,False,3.0,False,False,True,False,False
+TCK-2073,B,Finance,Portal,2025-11-20 09:15:00,,Open,Low,48,AG-007,Engineering,Budget Access,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2074,A,Finance,Portal,2025-11-15 10:30:00,,In Progress,Critical,4,AG-004,Operations,Vendor Payment,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2075,B,HR,Email,2025-11-08 16:45:00,2025-11-09 03:45:00,Closed,Medium,24,AG-006,Engineering,Benefits Query,,0,2025-11,November 2025,11.0,True,0.0,False,False,False,False,False
+TCK-2076,A,HR,Email,2025-11-08 15:30:00,2025-11-11 01:30:00,Closed,Medium,24,AG-002,Operations,Benefits Query,4.0,0,2025-11,November 2025,58.0,False,4.0,True,False,True,False,False
+TCK-2077,B,Finance,Chat,2025-11-23 12:45:00,,Open,High,8,AG-007,Corporate,Invoice Dispute,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2078,A,HR,Phone,2025-11-19 12:30:00,2025-11-20 14:30:00,Resolved,Low,48,AG-002,Engineering,Benefits Query,,0,2025-11,November 2025,26.0,True,0.0,False,False,False,False,False
+TCK-2079,A,Finance,Chat,2025-11-27 12:15:00,,Open,Medium,24,AG-004,Marketing,Vendor Payment,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2080,A,Finance,Portal,2025-11-21 18:00:00,2025-11-23 08:00:00,Closed,Medium,24,AG-004,Sales,Invoice Dispute,,0,2025-11,November 2025,38.0,False,0.0,False,False,False,False,False
+TCK-2081,B,IT,Email,2025-11-05 16:30:00,2025-11-07 22:30:00,Closed,Low,48,AG-005,Operations,Software Install,,0,2025-11,November 2025,54.0,False,0.0,False,False,False,False,False
+TCK-2082,B,IT,Chat,2025-11-03 10:15:00,,In Progress,Medium,24,AG-005,Marketing,VPN Access,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2083,A,HR,Portal,2025-11-09 16:00:00,2025-11-11 12:00:00,Closed,Medium,24,AG-002,Marketing,Onboarding,,0,2025-11,November 2025,44.0,False,0.0,False,False,False,False,False
+TCK-2084,A,Finance,Email,2025-11-16 08:30:00,,In Progress,High,8,AG-004,Corporate,Vendor Payment,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2085,B,IT,Email,2025-11-02 08:30:00,,In Progress,High,8,AG-005,Marketing,Laptop Issue,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2086,B,HR,Phone,2025-11-22 16:45:00,2025-11-25 01:45:00,Closed,Medium,24,AG-006,Engineering,Onboarding,3.0,1,2025-11,November 2025,57.0,False,3.0,False,False,True,False,True
+TCK-2087,B,IT,Chat,2025-11-15 11:30:00,2025-11-16 22:30:00,Resolved,Medium,24,AG-005,Engineering,Software Install,1.0,0,2025-11,November 2025,35.0,False,1.0,False,True,True,False,False
+TCK-2088,B,IT,Email,2025-11-21 18:00:00,2025-11-22 03:00:00,Resolved,Medium,24,AG-005,Engineering,Email Issue,2.0,0,2025-11,November 2025,9.0,True,2.0,False,True,True,False,False
+TCK-2089,A,HR,Email,2025-11-26 17:00:00,2025-11-27 02:00:00,Resolved,Low,48,AG-002,Sales,Payroll Query,1.0,0,2025-11,November 2025,9.0,True,1.0,False,True,True,False,False
+TCK-2090,B,IT,Phone,2025-11-01 10:30:00,2025-11-02 20:30:00,Resolved,Medium,24,AG-005,Engineering,Software Install,3.0,0,2025-11,November 2025,34.0,False,3.0,False,False,True,False,False
+TCK-2091,A,HR,Email,2025-11-20 08:30:00,2025-11-20 12:30:00,Closed,Low,48,AG-002,Corporate,Onboarding,4.0,0,2025-11,November 2025,4.0,True,4.0,True,False,True,False,False
+TCK-2092,B,IT,Portal,2025-11-11 17:15:00,2025-11-13 10:15:00,Resolved,High,8,AG-005,Corporate,Email Issue,4.0,0,2025-11,November 2025,41.0,False,4.0,True,False,True,False,False
+TCK-2093,B,IT,Portal,2025-11-28 18:15:00,2025-11-29 21:15:00,Closed,Low,48,AG-005,Corporate,Software Install,1.0,0,2025-11,November 2025,27.0,True,1.0,False,True,True,False,False
+TCK-2094,B,Finance,Phone,2025-11-12 10:45:00,2025-11-12 16:45:00,Resolved,Low,48,AG-007,Engineering,Vendor Payment,,0,2025-11,November 2025,6.0,True,0.0,False,False,False,False,False
+TCK-2095,B,Finance,Portal,2025-11-14 13:45:00,,In Progress,Medium,24,AG-007,Marketing,Vendor Payment,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2096,B,IT,Email,2025-11-05 18:45:00,2025-11-08 01:45:00,Resolved,High,8,AG-005,Engineering,VPN Access,4.0,0,2025-11,November 2025,55.0,False,4.0,True,False,True,False,False
+TCK-2097,A,Finance,Phone,2025-11-01 10:30:00,,Open,Medium,24,AG-004,Operations,Invoice Dispute,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2098,A,IT,Chat,2025-11-03 10:00:00,2025-11-04 11:00:00,Resolved,Medium,24,AG-003,Corporate,VPN Access,3.0,0,2025-11,November 2025,25.0,False,3.0,False,False,True,False,False
+TCK-2099,A,IT,Email,2025-11-06 17:00:00,,Open,High,8,AG-003,Corporate,Email Issue,,0,2025-11,November 2025,,,0.0,False,False,False,True,False
+TCK-2100,B,HR,Phone,2025-11-07 16:00:00,2025-11-09 12:00:00,Closed,High,8,AG-006,Marketing,Policy Clarification,4.0,0,2025-11,November 2025,44.0,False,4.0,True,False,True,False,False
+TCK-2101,A,IT,Email,2025-12-10 11:15:00,,Open,High,8,AG-001,Engineering,Software Install,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2102,B,IT,Email,2025-12-13 16:15:00,2025-12-15 20:15:00,Closed,Low,48,AG-005,Engineering,Software Install,,1,2025-12,December 2025,52.0,False,0.0,False,False,False,False,True
+TCK-2103,A,HR,Portal,2025-12-28 13:45:00,2025-12-29 16:45:00,Closed,Medium,24,AG-002,Engineering,Onboarding,3.0,0,2025-12,December 2025,27.0,False,3.0,False,False,True,False,False
+TCK-2104,B,Finance,Phone,2025-12-03 14:00:00,2025-12-05 00:00:00,Resolved,Medium,24,AG-007,Corporate,Vendor Payment,,0,2025-12,December 2025,34.0,False,0.0,False,False,False,False,False
+TCK-2105,A,IT,Portal,2025-12-17 16:15:00,,In Progress,Medium,24,AG-001,Sales,Network Outage,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2106,A,HR,Email,2025-12-06 17:15:00,,Open,Medium,24,AG-002,Corporate,Onboarding,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2107,B,Finance,Phone,2025-12-28 18:30:00,2025-12-29 23:30:00,Resolved,Critical,4,AG-007,Operations,Cost Center Change,5.0,1,2025-12,December 2025,29.0,False,5.0,True,False,True,False,True
+TCK-2108,B,HR,Portal,2025-12-02 13:30:00,2025-12-04 20:30:00,Resolved,Low,48,AG-006,Marketing,Benefits Query,4.0,0,2025-12,December 2025,55.0,False,4.0,True,False,True,False,False
+TCK-2109,A,HR,Email,2025-12-11 17:45:00,2025-12-12 22:45:00,Closed,Low,48,AG-002,Operations,Payroll Query,2.0,1,2025-12,December 2025,29.0,True,2.0,False,True,True,False,True
+TCK-2110,B,HR,Email,2025-12-12 13:30:00,2025-12-14 09:30:00,Closed,Medium,24,AG-006,Operations,Payroll Query,5.0,0,2025-12,December 2025,44.0,False,5.0,True,False,True,False,False
+TCK-2111,B,HR,Email,2025-12-11 09:15:00,,In Progress,Medium,24,AG-006,Sales,Benefits Query,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2112,A,HR,Chat,2025-12-21 13:15:00,,Open,Low,48,AG-002,Corporate,Benefits Query,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2113,B,IT,Phone,2025-12-10 10:15:00,2025-12-10 23:15:00,Closed,Medium,24,AG-005,Sales,Laptop Issue,1.0,0,2025-12,December 2025,13.0,True,1.0,False,True,True,False,False
+TCK-2114,A,Finance,Phone,2025-12-25 17:15:00,2025-12-26 05:15:00,Closed,High,8,AG-004,Corporate,Invoice Dispute,2.0,0,2025-12,December 2025,12.0,False,2.0,False,True,True,False,False
+TCK-2115,B,Finance,Chat,2025-12-08 16:15:00,2025-12-09 23:15:00,Closed,Low,48,AG-007,Operations,Cost Center Change,,0,2025-12,December 2025,31.0,True,0.0,False,False,False,False,False
+TCK-2116,B,HR,Chat,2025-12-06 11:15:00,,In Progress,Critical,4,AG-006,Operations,Benefits Query,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2117,A,Finance,Portal,2025-12-10 09:15:00,2025-12-10 19:15:00,Resolved,Low,48,AG-004,Engineering,Reimbursement,,0,2025-12,December 2025,10.0,True,0.0,False,False,False,False,False
+TCK-2118,A,HR,Portal,2025-12-13 16:30:00,2025-12-14 16:30:00,Resolved,Low,48,AG-002,Engineering,Policy Clarification,,0,2025-12,December 2025,24.0,True,0.0,False,False,False,False,False
+TCK-2119,B,IT,Email,2025-12-02 12:45:00,,Open,High,8,AG-005,Corporate,Email Issue,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2120,A,IT,Portal,2025-12-09 11:15:00,2025-12-10 21:15:00,Closed,Medium,24,AG-003,Engineering,VPN Access,1.0,1,2025-12,December 2025,34.0,False,1.0,False,True,True,False,True
+TCK-2121,B,Finance,Chat,2025-12-03 09:45:00,2025-12-04 18:45:00,Closed,Critical,4,AG-007,Sales,Vendor Payment,5.0,0,2025-12,December 2025,33.0,False,5.0,True,False,True,False,False
+TCK-2122,B,IT,Portal,2025-12-17 13:00:00,,In Progress,Medium,24,AG-005,Corporate,Software Install,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2123,A,Finance,Chat,2025-12-12 12:00:00,2025-12-13 04:00:00,Closed,Critical,4,AG-004,Marketing,Vendor Payment,3.0,0,2025-12,December 2025,16.0,False,3.0,False,False,True,False,False
+TCK-2124,A,Finance,Chat,2025-12-23 15:15:00,,Open,Critical,4,AG-004,Engineering,Vendor Payment,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2125,A,IT,Email,2025-12-02 13:30:00,2025-12-04 00:30:00,Closed,Low,48,AG-003,Operations,Network Outage,,0,2025-12,December 2025,35.0,True,0.0,False,False,False,False,False
+TCK-2126,B,IT,Phone,2025-12-09 09:30:00,2025-12-10 14:30:00,Closed,Medium,24,AG-005,Operations,Laptop Issue,4.0,0,2025-12,December 2025,29.0,False,4.0,True,False,True,False,False
+TCK-2127,B,IT,Chat,2025-12-03 14:15:00,2025-12-03 20:15:00,Closed,Medium,24,AG-005,Operations,VPN Access,4.0,0,2025-12,December 2025,6.0,True,4.0,True,False,True,False,False
+TCK-2128,B,HR,Chat,2025-12-02 13:45:00,2025-12-02 17:45:00,Resolved,Low,48,AG-006,Corporate,Policy Clarification,2.0,0,2025-12,December 2025,4.0,True,2.0,False,True,True,False,False
+TCK-2129,A,Finance,Chat,2025-12-02 10:00:00,2025-12-03 10:00:00,Resolved,Medium,24,AG-004,Marketing,Invoice Dispute,4.0,0,2025-12,December 2025,24.0,True,4.0,True,False,True,False,False
+TCK-2130,B,HR,Portal,2025-12-19 10:30:00,2025-12-20 02:30:00,Closed,Medium,24,AG-006,Engineering,Leave Balance,4.0,0,2025-12,December 2025,16.0,True,4.0,True,False,True,False,False
+TCK-2131,A,HR,Phone,2025-12-23 15:15:00,,In Progress,High,8,AG-002,Sales,Payroll Query,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2132,A,IT,Chat,2025-12-06 15:00:00,,Open,Low,48,AG-003,Operations,Network Outage,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2133,B,HR,Email,2025-12-23 18:15:00,,Open,Medium,24,AG-006,Sales,Leave Balance,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2134,A,HR,Portal,2025-12-12 16:30:00,2025-12-13 01:30:00,Closed,Low,48,AG-002,Engineering,Policy Clarification,4.0,0,2025-12,December 2025,9.0,True,4.0,True,False,True,False,False
+TCK-2135,B,Finance,Portal,2025-12-05 13:00:00,2025-12-06 12:00:00,Closed,Medium,24,AG-007,Marketing,Cost Center Change,2.0,0,2025-12,December 2025,23.0,True,2.0,False,True,True,False,False
+TCK-2136,A,IT,Email,2025-12-10 10:15:00,2025-12-11 09:15:00,Closed,Medium,24,AG-003,Engineering,VPN Access,5.0,0,2025-12,December 2025,23.0,True,5.0,True,False,True,False,False
+TCK-2137,B,Finance,Portal,2025-12-17 18:15:00,2025-12-18 05:15:00,Closed,Medium,24,AG-007,Marketing,Invoice Dispute,,1,2025-12,December 2025,11.0,True,0.0,False,False,False,False,True
+TCK-2138,A,Finance,Phone,2025-12-21 11:45:00,,Open,Critical,4,AG-004,Operations,Budget Access,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2139,A,Finance,Chat,2025-12-10 15:00:00,,Open,High,8,AG-004,Corporate,Budget Access,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2140,A,HR,Email,2025-12-11 13:30:00,,In Progress,High,8,AG-002,Marketing,Benefits Query,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2141,A,HR,Email,2025-12-15 09:30:00,2025-12-15 13:30:00,Closed,High,8,AG-002,Corporate,Benefits Query,2.0,0,2025-12,December 2025,4.0,True,2.0,False,True,True,False,False
+TCK-2142,B,IT,Email,2025-12-16 16:45:00,2025-12-16 18:45:00,Closed,Medium,24,AG-005,Corporate,Email Issue,2.0,0,2025-12,December 2025,2.0,True,2.0,False,True,True,False,False
+TCK-2143,B,IT,Portal,2025-12-10 15:45:00,2025-12-10 22:45:00,Resolved,Critical,4,AG-005,Sales,VPN Access,,0,2025-12,December 2025,7.0,False,0.0,False,False,False,False,False
+TCK-2144,B,IT,Chat,2025-12-02 17:15:00,2025-12-03 18:15:00,Closed,High,8,AG-005,Marketing,VPN Access,,0,2025-12,December 2025,25.0,False,0.0,False,False,False,False,False
+TCK-2145,A,IT,Portal,2025-12-13 13:30:00,2025-12-13 23:30:00,Closed,Medium,24,AG-001,Marketing,Email Issue,1.0,1,2025-12,December 2025,10.0,True,1.0,False,True,True,False,True
+TCK-2146,A,Finance,Phone,2025-12-26 15:45:00,2025-12-27 00:45:00,Resolved,Low,48,AG-004,Marketing,Vendor Payment,5.0,0,2025-12,December 2025,9.0,True,5.0,True,False,True,False,False
+TCK-2147,B,Finance,Phone,2025-12-17 16:45:00,,Open,High,8,AG-007,Operations,Vendor Payment,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
+TCK-2148,A,HR,Phone,2025-12-26 18:00:00,2025-12-28 12:00:00,Closed,High,8,AG-002,Engineering,Benefits Query,5.0,0,2025-12,December 2025,42.0,False,5.0,True,False,True,False,False
+TCK-2149,B,IT,Email,2025-12-02 17:00:00,2025-12-03 20:00:00,Resolved,Medium,24,AG-005,Corporate,Laptop Issue,5.0,0,2025-12,December 2025,27.0,False,5.0,True,False,True,False,False
+TCK-2150,A,Finance,Email,2025-12-17 11:30:00,,In Progress,Medium,24,AG-004,Operations,Reimbursement,,0,2025-12,December 2025,,,0.0,False,False,False,True,False
