@@ -10,9 +10,8 @@ This solution processes ticket data from two support hubs and generates performa
 
 ### ReadMe:
 1. **Read this README first**
-2. **Open TEAM_GUIDE.md** 
-3. **Run the script** to generate outputs
-4. **Create dashboard** in Excel using the outputs
+2. **Run the script** to generate outputs
+3. **Create dashboard** in Excel using the outputs
 
 ---
 
